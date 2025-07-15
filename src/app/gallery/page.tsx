@@ -2,7 +2,6 @@
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
-import { PhotoGrid } from "@/components/PhotoGrid";
 import Link from "next/link";
 
 const albumsQuery = `*[_type == "photoAlbum"]{_id, title, description, photos}`;

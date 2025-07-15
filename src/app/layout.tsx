@@ -15,31 +15,51 @@ export default function RootLayout({
             maxWidth: 1200,
             margin: "0 auto 32px auto",
             display: "flex",
-            justifyContent: "flex-end",
-            gap: 24,
+            alignItems: "center",
             padding: "1.5rem 2rem 0 2rem",
           }}
         >
-          <Link
-            href="/"
+          <div style={{ flex: 1 }}></div>
+          <div
             style={{
-              color: "#444444",
-              fontWeight: 500,
-              textDecoration: "none",
+              fontWeight: 700,
+              fontSize: 20,
+              color: "#444",
+              flex: 0,
+              textAlign: "center",
             }}
           >
-            About
-          </Link>
-          <Link
-            href="/gallery"
+            Evunti
+          </div>
+          <div
             style={{
-              color: "#444444",
-              fontWeight: 500,
-              textDecoration: "none",
+              flex: 1,
+              display: "flex",
+              justifyContent: "flex-end",
+              gap: 24,
             }}
           >
-            Gallery
-          </Link>
+            <Link
+              href="/"
+              style={{
+                color: "#444444",
+                fontWeight: 500,
+                textDecoration: "none",
+              }}
+            >
+              About
+            </Link>
+            <Link
+              href="/gallery"
+              style={{
+                color: "#444444",
+                fontWeight: 500,
+                textDecoration: "none",
+              }}
+            >
+              Gallery
+            </Link>
+          </div>
         </nav>
         {children}
         <footer
