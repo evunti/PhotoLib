@@ -1,7 +1,7 @@
 // Update the path below if your client file is in a different location
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
-import Image from "next/image";
+// import Link from "next/link";
 import Link from "next/link";
 
 const albumsQuery = `*[_type == "photoAlbum"]{_id, title, description, photos}`;
@@ -53,54 +53,66 @@ export default async function GalleryPage() {
           maxWidth: 1200,
         }}
       >
-        {albums.map((album: any) => {
-          const coverPhoto = album.photos?.[0];
-          return (
-            <Link
-              key={album._id}
-              href={`/album/${album._id}`}
-              style={{
-                textDecoration: "none",
-                color: "inherit",
-                minWidth: 260,
-                maxWidth: 320,
-                aspectRatio: "1 / 1.1",
-                flex: "1 1 260px",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                transition: "box-shadow 0.2s",
-                cursor: "pointer",
-              }}
-            >
-              {coverPhoto && (
-                <Image
-                  src={urlFor(coverPhoto)
-                    .width(800)
-                    .height(800)
-                    .fit("crop")
-                    .dpr(2)
-                    .url()}
-                  alt={coverPhoto.alt || album.title}
-                  width={800}
-                  height={400}
-                />
-              )}
-              <h2
+        {albums.map(
+          (album: {
+            _id: string;
+            title: string;
+            description: string;
+            photos: Array<{
+              asset?: { _ref?: string };
+              alt?: string;
+              [key: string]: unknown;
+            }>;
+          }) => {
+            const coverPhoto = album.photos?.[0];
+            return (
+              <Link
+                key={album._id}
+                href={`/album/${album._id}`}
                 style={{
-                  fontSize: "1.15rem",
-                  fontWeight: 500,
-                  margin: 0,
-                  color: "#333",
-                  textAlign: "center",
-                  marginTop: 8,
+                  textDecoration: "none",
+                  color: "inherit",
+                  minWidth: 260,
+                  maxWidth: 320,
+                  aspectRatio: "1 / 1.1",
+                  flex: "1 1 260px",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  transition: "box-shadow 0.2s",
+                  cursor: "pointer",
                 }}
               >
-                {album.title}
-              </h2>
-            </Link>
-          );
-        })}
+                {coverPhoto && (
+                  <img
+                    src={urlFor(coverPhoto)
+                      .width(800)
+                      .height(800)
+                      .fit("crop")
+                      .dpr(2)
+                      .url()}
+                    alt={coverPhoto.alt || album.title}
+                    width={800}
+                    height={400}
+                    style={{ objectFit: "cover", display: "block" }}
+                  />
+                )}
+                <h2
+                  style={{
+                    fontSize: "1.15rem",
+                    fontWeight: 500,
+                    margin: 0,
+                    color: "#333",
+                    textAlign: "center",
+                    marginTop: 8,
+                  }}
+                >
+                  {album.title}
+                </h2>
+              </Link>
+            );
+          }
+        )}
       </div>
     </main>
   );
