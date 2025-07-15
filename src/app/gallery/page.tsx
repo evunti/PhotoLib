@@ -1,7 +1,6 @@
 // Update the path below if your client file is in a different location
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
-// import Link from "next/link";
 import Link from "next/link";
 
 const albumsQuery = `*[_type == "photoAlbum"]{_id, title, description, photos}`;
