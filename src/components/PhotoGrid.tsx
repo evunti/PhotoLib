@@ -1,7 +1,12 @@
-import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 
-export function PhotoGrid({ photos }: { photos: any[] }) {
+interface Photo {
+  asset?: { _ref?: string };
+  alt?: string;
+  [key: string]: unknown;
+}
+
+export function PhotoGrid({ photos }: { photos: Photo[] }) {
   return (
     <div
       style={{
@@ -12,10 +17,10 @@ export function PhotoGrid({ photos }: { photos: any[] }) {
         justifyItems: "center",
       }}
     >
-      {photos?.map((photo: any, idx: number) => {
+      {photos?.map((photo, idx: number) => {
         if (!photo?.asset?._ref) return null;
         return (
-          <Image
+          <img
             key={idx}
             src={urlFor(photo).width(800).height(800).fit("crop").dpr(2).url()}
             alt={photo.alt || "Photo"}
