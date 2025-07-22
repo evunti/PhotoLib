@@ -63,3 +63,10 @@ export default async function AlbumPage({ params }: AlbumPageProps) {
     </main>
   );
 }
+
+export async function generateStaticParams() {
+  const albums = await client.fetch(`*[_type == "photoAlbum"]{_id}`);
+  return albums.map((album: { _id: string }) => ({
+    albumId: album._id,
+  }));
+}

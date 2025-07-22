@@ -1,0 +1,27 @@
+[
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string",
+        "title": "Album Title"
+      },
+      {
+        "name": "description",
+        "type": "text",
+        "title": "Album Description"
+      },
+      {
+        "of": [
+          {
+            "type": "image"
+          }
+        ],
+        "name": "photos",
+        "type": "array"
+      }
+    ],
+    "name": "photoAlbum",
+    "type": "document"
+  }
+]
