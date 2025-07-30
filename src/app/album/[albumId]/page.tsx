@@ -4,10 +4,12 @@ import Link from "next/link";
 
 const albumQuery = `*[_type == "photoAlbum" && _id == $albumId][0]{title, description, photos}`;
 
-type AlbumPageProps = { params: { albumId: string } };
+type AlbumPageProps = { params: Promise<{ albumId: string }> };
 
 export default async function AlbumPage({ params }: AlbumPageProps) {
-  const album = await client.fetch(albumQuery, { albumId: params.albumId });
+  const { albumId } = await params;
+
+  const album = await client.fetch(albumQuery, { albumId: albumId });
   if (!album) return <main style={{ padding: 32 }}>Album not found.</main>;
 
   return (
