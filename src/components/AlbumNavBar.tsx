@@ -30,20 +30,23 @@ export function AlbumNavBar() {
       }}
     >
       <div style={{ flex: 1 }}></div>
-      <div
-        style={{
-          fontWeight: 700,
-          fontSize: 20,
-          color: "#444",
-          flex: 0,
-          textAlign: "center",
-          position: "absolute",
-          left: "50%",
-          transform: "translateX(-50%)",
-        }}
-      >
-        Evunti
-      </div>
+      <Link href="/" style={{ textDecoration: "none" }}>
+        <div
+          style={{
+            fontWeight: 700,
+            fontSize: 20,
+            color: "#444",
+            flex: 0,
+            textAlign: "center",
+            position: "absolute",
+            left: "50%",
+            transform: "translateX(-50%)",
+            cursor: "pointer",
+          }}
+        >
+          Evunti
+        </div>
+      </Link>
       <div
         style={{
           flex: 1,
