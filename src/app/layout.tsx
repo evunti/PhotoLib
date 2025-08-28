@@ -1,4 +1,3 @@
-import Link from "next/link";
 import "@/app/globals.css";
 import { AlbumNavBar } from "@/components/AlbumNavBar";
 

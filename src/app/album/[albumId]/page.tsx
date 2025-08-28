@@ -1,7 +1,6 @@
 import { client } from "@/sanity/lib/client";
 import { PhotoGrid } from "@/components/PhotoGrid";
 import { AlbumNavBar } from "@/components/AlbumNavBar";
-import Link from "next/link";
 
 const albumQuery = `*[_type == "photoAlbum" && _id == $albumId][0]{title, description, photos}`;
 
