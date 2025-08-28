@@ -1,3 +1,4 @@
+"use client";
 import { client } from "@/sanity/lib/client";
 import { PhotoGrid } from "@/components/PhotoGrid";
 import Link from "next/link";
