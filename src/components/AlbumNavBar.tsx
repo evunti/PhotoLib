@@ -116,8 +116,12 @@ export function AlbumNavBar() {
                     textAlign: "left",
                   }}
                   onClick={() => setDropdownOpen(false)}
-                  onMouseOver={(e) => (e.currentTarget.style.background = "#e5e7eb")}
-                  onMouseOut={(e) => (e.currentTarget.style.background = "#f8fafc")}
+                  onMouseOver={(e) =>
+                    (e.currentTarget.style.background = "#e5e7eb")
+                  }
+                  onMouseOut={(e) =>
+                    (e.currentTarget.style.background = "#f8fafc")
+                  }
                 >
                   About
                 </Link>
@@ -135,8 +139,12 @@ export function AlbumNavBar() {
                     textAlign: "left",
                   }}
                   onClick={() => setDropdownOpen(false)}
-                  onMouseOver={(e) => (e.currentTarget.style.background = "#e5e7eb")}
-                  onMouseOut={(e) => (e.currentTarget.style.background = "#f8fafc")}
+                  onMouseOver={(e) =>
+                    (e.currentTarget.style.background = "#e5e7eb")
+                  }
+                  onMouseOut={(e) =>
+                    (e.currentTarget.style.background = "#f8fafc")
+                  }
                 >
                   Gallery
                 </Link>

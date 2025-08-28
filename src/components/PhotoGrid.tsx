@@ -1,3 +1,4 @@
+"use client";
 import { urlFor } from "@/sanity/lib/image";
 
 interface Photo {
