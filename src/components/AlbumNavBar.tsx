@@ -18,13 +18,15 @@ export function AlbumNavBar() {
   return (
     <nav
       style={{
-        width: "100%",
-        maxWidth: "90vw",
+        width: "100vw",
+        maxWidth: "100vw",
         display: "flex",
         alignItems: "center",
-        justifyContent: "space-between",
+        justifyContent: "center",
         marginBottom: "16px",
         position: "relative",
+        paddingLeft: "16px",
+        paddingRight: "16px",
       }}
     >
       <div style={{ flex: 1 }}></div>
@@ -35,11 +37,22 @@ export function AlbumNavBar() {
           color: "#444",
           flex: 0,
           textAlign: "center",
+          position: "absolute",
+          left: "50%",
+          transform: "translateX(-50%)",
         }}
       >
         Evunti
       </div>
-      <div style={{ flex: 1, display: "flex", justifyContent: "flex-end" }}>
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          justifyContent: "flex-end",
+          gap: "24px",
+          maxWidth: "320px",
+        }}
+      >
         {isMobile ? (
           <>
             <button
@@ -159,7 +172,6 @@ export function AlbumNavBar() {
                 color: "#444444",
                 fontWeight: 500,
                 textDecoration: "none",
-                marginRight: "24px",
               }}
             >
               About

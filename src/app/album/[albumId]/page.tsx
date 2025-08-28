@@ -1,6 +1,5 @@
 import { client } from "@/sanity/lib/client";
 import { PhotoGrid } from "@/components/PhotoGrid";
-import { AlbumNavBar } from "@/components/AlbumNavBar";
 
 const albumQuery = `*[_type == "photoAlbum" && _id == $albumId][0]{title, description, photos}`;
 
@@ -21,7 +20,22 @@ export default async function AlbumPage({ params }: AlbumPageProps) {
         alignItems: "center",
       }}
     >
-      <AlbumNavBar />
+      <h1
+        style={{
+          fontWeight: 700,
+          fontSize: 20,
+          color: "#444",
+          textAlign: "center",
+          margin: "24px 0 8px 0",
+          width: "100%",
+          maxWidth: "90vw",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        Photo Albums
+      </h1>
       <PhotoGrid photos={album.photos} />
     </main>
   );
