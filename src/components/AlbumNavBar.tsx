@@ -28,10 +28,7 @@ export function AlbumNavBar() {
       <div className="flex-1 flex justify-end gap-6">
         {!isMobile && (
           <>
-            <Link
-              href="/about"
-              className="text-[#444444] font-medium no-underline"
-            >
+            <Link href="/" className="text-[#444444] font-medium no-underline">
               About
             </Link>
             <Link
@@ -56,7 +53,7 @@ export function AlbumNavBar() {
         {isMobile && dropdownOpen && (
           <div className="absolute top-12 right-0 bg-[#f8fafc] border border-[#e5e7eb] shadow-[0_4px_12px_rgba(34,34,34,0.10)] z-10 min-w-[90px] rounded overflow-hidden p-0">
             <Link
-              href="/about"
+              href="/"
               className="block px-[14px] py-[10px] no-underline text-[#444] bg-[#f8fafc] font-semibold text-[15px] border-b border-[#e5e7eb] transition-colors duration-200 text-left hover:bg-[#e5e7eb]"
               onClick={() => setDropdownOpen(false)}
             >

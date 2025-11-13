@@ -2,17 +2,7 @@
 
 export default function AboutPage() {
   return (
-    <main
-      style={{
-        background: "#f8fafc",
-        minHeight: "100vh",
-        padding: "2rem",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
+    <main className="min-h-screen p-8 flex flex-col items-center justify-start pt-16">
       {/* <h1
         style={{
           fontSize: "2rem",
@@ -26,30 +16,12 @@ export default function AboutPage() {
       </h1> */}
 
       <div
+        className="w-full max-w-6xl h-[600px] text-[#444] text-lg text-center bg-cover bg-center bg-no-repeat flex items-center justify-center"
         style={{
-          width: "100vw", // or "100%"
-          height: 600,
-          color: "#444",
-          fontSize: 18,
-          textAlign: "center",
-
           backgroundImage: "url('/images/profile.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
         }}
       >
-        <div
-          style={{
-            color: "#fff",
-            // padding: "rem",
-            marginBottom: "1rem",
-            width: "100%",
-          }}
-        >
+        <div className="text-white mb-4 w-full">
           <p>
             Welcome to my Photo Gallery! Among these pages, you will find a
             collection of my photos, organized into albums. This is a simple
