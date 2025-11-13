@@ -34,7 +34,7 @@ export default async function AlbumPage({ params }: AlbumPageProps) {
           justifyContent: "center",
         }}
       >
-        Photo Albums
+        {album.title}
       </h1>
       <PhotoGrid photos={album.photos} />
     </main>
