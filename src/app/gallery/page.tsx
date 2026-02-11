@@ -82,6 +82,7 @@ export default async function GalleryPage() {
                 }}
               >
                 {coverPhoto && (
+                  // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={urlFor(coverPhoto)
                       .width(800)

@@ -24,8 +24,8 @@ export default function AboutPage() {
         <div className="text-white mb-4 w-full">
           <p>
             Welcome to my website! Among these pages, you will find a collection
-            of my photos, organized into albums, as well as some projects I've
-            done. This website was built with Next.js and Sanity.
+            of my photos, organized into albums, as well as some projects
+            I&apos;ve done. This website was built with Next.js and Sanity.
           </p>
         </div>
       </div>

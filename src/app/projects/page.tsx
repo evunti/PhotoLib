@@ -47,7 +47,7 @@ export default function ProjectsPage() {
           maxWidth: 700,
         }}
       >
-        A collection of websites I've built. Click to visit them.
+        A collection of websites I&apos;ve built. Click to visit them.
       </p>
       <div
         style={{
