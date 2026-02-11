@@ -11,8 +11,7 @@ export default async function GalleryPage() {
     <main
       style={{
         background: "#f8fafc",
-        minHeight: "100vh",
-        padding: "2rem",
+        padding: "2rem 2rem 4rem 2rem",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -77,7 +76,6 @@ export default async function GalleryPage() {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  transition: "box-shadow 0.2s",
                   cursor: "pointer",
                 }}
               >

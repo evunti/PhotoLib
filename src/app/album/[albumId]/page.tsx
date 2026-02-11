@@ -13,8 +13,7 @@ export default async function AlbumPage({ params }: AlbumPageProps) {
   return (
     <main
       style={{
-        minHeight: "100vh",
-        padding: "1rem",
+        padding: "1rem 1rem 3rem 1rem",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
