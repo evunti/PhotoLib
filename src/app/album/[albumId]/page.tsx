@@ -1,5 +1,6 @@
 import { client } from "@/sanity/lib/client";
 import { PhotoGrid } from "@/components/PhotoGrid";
+import Link from "next/link";
 
 const albumQuery = `*[_type == "photoAlbum" && _id == $albumId][0]{title, description, photos}`;
 
@@ -9,7 +10,6 @@ export default async function AlbumPage({ params }: AlbumPageProps) {
   const { albumId } = await params;
   const album = await client.fetch(albumQuery, { albumId: albumId });
   if (!album) return <main style={{ padding: "16px" }}>Album not found.</main>;
-
   return (
     <main
       style={{
@@ -20,23 +20,49 @@ export default async function AlbumPage({ params }: AlbumPageProps) {
         alignItems: "center",
       }}
     >
-      <h1
+      <div
         style={{
-          fontWeight: 700,
-          fontSize: 20,
-          color: "#444",
-          textAlign: "center",
-          margin: "24px 0 8px 0",
+          maxWidth: 1000,
           width: "100%",
-          maxWidth: "90vw",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
         }}
       >
-        {album.title}
-      </h1>
-      <PhotoGrid photos={album.photos} />
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            marginBottom: "1rem",
+          }}
+        >
+          <Link
+            href="/gallery"
+            style={{
+              color: "#666",
+              textDecoration: "none",
+              fontSize: "1rem",
+              fontWeight: 500,
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.5rem",
+            }}
+          >
+            ← Back
+          </Link>
+          <h1
+            style={{
+              fontWeight: 700,
+              fontSize: 20,
+              color: "#444",
+              textAlign: "center",
+              margin: 0,
+            }}
+          >
+            {album.title}
+          </h1>
+          <div style={{ width: "60px" }}></div>
+        </div>
+        <PhotoGrid photos={album.photos} />
+      </div>
     </main>
   );
 }
