@@ -10,8 +10,8 @@ export default function AboutPage() {
         <div className="rounded-2xl py-8 px-6 w-full max-w-[600px] mx-auto mb-[17rem]">
           <p>
             Welcome to my website! Among these pages, you will find a collection
-            of my photos, organized into albums, as well as some projects I've
-            done. This website was built with Next.js and Sanity.
+            of my photos, organized into albums, as well as some projects
+            I&apos;ve done. This website was built with Next.js and Sanity.
           </p>
         </div>
       </div>

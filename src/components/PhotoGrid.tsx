@@ -21,6 +21,7 @@ export function PhotoGrid({ photos }: { photos: Photo[] }) {
       {photos?.map((photo, idx: number) => {
         if (!photo?.asset?._ref) return null;
         return (
+          // eslint-disable-next-line @next/next/no-img-element
           <img
             key={idx}
             src={urlFor(photo).width(800).height(800).fit("crop").dpr(2).url()}
