@@ -37,6 +37,12 @@ export function AlbumNavBar() {
             >
               Gallery
             </Link>
+            <Link
+              href="/projects"
+              className="text-[#444444] font-medium no-underline"
+            >
+              Projects
+            </Link>
           </>
         )}
         {isMobile && (
@@ -65,6 +71,13 @@ export function AlbumNavBar() {
               onClick={() => setDropdownOpen(false)}
             >
               Gallery
+            </Link>
+            <Link
+              href="/projects"
+              className="block px-[14px] py-[10px] no-underline text-[#444] bg-[#f8fafc] font-semibold text-[15px] transition-colors duration-200 text-left hover:bg-[#e5e7eb]"
+              onClick={() => setDropdownOpen(false)}
+            >
+              Projects
             </Link>
           </div>
         )}
