@@ -1,8 +1,24 @@
 "use client";
+import Link from "next/link";
 
 export default function AboutPage() {
+  const quickLinks = [
+    {
+      title: "Photo Gallery",
+      description: "Browse my collection of photos organized into albums",
+      href: "/gallery",
+      icon: "📸",
+    },
+    {
+      title: "Projects",
+      description: "Check out the websites I've built",
+      href: "/projects",
+      icon: "💻",
+    },
+  ];
+
   return (
-    <main className="min-h-screen p-8 flex flex-col items-center justify-start pt-16">
+    <main className="p-8 pb-16 flex flex-col items-center justify-start pt-16 bg-[#f8fafc]">
       {/* <h1
         style={{
           fontSize: "2rem",

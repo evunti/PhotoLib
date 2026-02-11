@@ -8,9 +8,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100vh",
+          margin: 0,
+          background: "#f8fafc",
+        }}
+      >
         <AlbumNavBar />
-        {children}
+        <div style={{ flex: 1 }}>{children}</div>
         <footer
           style={{
             width: "100%",
@@ -19,6 +27,7 @@ export default function RootLayout({
             color: "#888",
             fontSize: 15,
             background: "#f8fafc",
+            marginTop: "auto",
           }}
         >
           &copy; {new Date().getFullYear()} Evunti Photography |
